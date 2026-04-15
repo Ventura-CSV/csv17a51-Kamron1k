@@ -27,6 +27,7 @@ for c in course:
         total += c['CourseCredit']
 
 keys = ['CRN', 'CourseTitle', 'CourseCredit', 'CourseGrade']
+
 values = [
     ['CSV17', 'Discrete Structures', 3, 'A'],
     ['CSV09', 'Intro to Computer Science', 3, 'B'],
