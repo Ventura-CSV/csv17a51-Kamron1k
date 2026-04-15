@@ -1,78 +1,12 @@
-# =========================
-# 0-0 Student Dictionary
-# =========================
-student = {
-    'name': 'Kamron1k',
-    'id': '900954459',
-    'course': 'CSV17',
-    'grade': 'A'
-}
+student = {'name': 'Kamron1k', 'id': '900954459', 'course': 'CSV17', 'grade': 'A'}
 
-# =========================
-# 0-1 Domain and Range
-# =========================
 h = {10: 'x', 20: 'y', 30: 'x', 40: 'z'}
-
 domain = set(h.keys())
 range_vals = set(h.values())
 
-# =========================
-# 0-2 Traversal
-# =========================
-for k in h:
-    pass
-
-# =========================
-# 0-3 Membership
-# =========================
-_ = (20 in h)
-_ = ('w' in h.values())
-_ = ('x' in h.values())
-
-# =========================
-# 1.0 Course Dictionary
-# =========================
-course = {
-    'CRN': 'CSV17',
-    'CourseTitle': 'Discrete Structures',
-    'CourseCredit': 3,
-    'CourseGrade': 'A'
-}
-
-# =========================
-# 1.1 List of Dictionaries
-# =========================
 course = [
-    {'CRN': 'CSV17', 'CourseTitle': 'Discrete Structures', 'CourseCredit': 3, 'CourseGrade': 'A'},
+    {'CRN': 'CSV17', 'CourseTitle': 'Discrete Structures', 'CourseCredit': 4, 'CourseGrade': 'A'},
     {'CRN': 'CSV09', 'CourseTitle': 'Intro to Computer Science', 'CourseCredit': 3, 'CourseGrade': 'B'},
-    {'CRN': 'CSV42', 'CourseTitle': 'Data Structures', 'CourseCredit': 3, 'CourseGrade': 'A'},
+    {'CRN': 'CSV42', 'CourseTitle': 'Data Structures', 'CourseCredit': 4, 'CourseGrade': 'A'},
     {'CRN': 'CSV11', 'CourseTitle': 'Intro to Programming', 'CourseCredit': 3, 'CourseGrade': 'B'}
 ]
-
-# =========================
-# 1.2 Change credits
-# =========================
-for c in course:
-    if c['CourseGrade'] == 'A':
-        c['CourseCredit'] = 4
-
-# =========================
-# 1.3 Sum Python credits
-# =========================
-total = 0
-for c in course:
-    if 'Python' in c['CourseTitle']:
-        total += c['CourseCredit']
-
-# =========================
-# 1.4 Zip version
-# =========================
-keys = ['CRN', 'CourseTitle', 'CourseCredit', 'CourseGrade']
-values = [
-    ['CSV17', 'Discrete Structures', 3, 'A'],
-    ['CSV09', 'Intro to Computer Science', 3, 'B'],
-    ['CSV42', 'Data Structures', 3, 'A'],
-    ['CSV11', 'Intro to Programming', 3, 'B']
-]
-
-course_zip = [dict(zip(keys, v)) for v in values]
