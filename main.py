@@ -68,6 +68,7 @@ for c in course:
 # 1.4 Build dictionary using zip
 # =========================
 keys = ['CRN', 'CourseTitle', 'CourseCredit', 'CourseGrade']
+
 values = [
     ['CSV17', 'Discrete Structures', 3, 'A'],
     ['CSV09', 'Intro to Computer Science', 3, 'B'],
@@ -76,6 +77,5 @@ values = [
 ]
 
 course_zip = []
-
 for v in values:
     course_zip.append(dict(zip(keys, v)))
