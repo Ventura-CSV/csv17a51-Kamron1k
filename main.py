@@ -1,38 +1,21 @@
-student = {
-    'name': 'Kamron1k',
-    'id': '900954459',
-    'course': 'CSV17',
-    'grade': 'A'
-}
+def get_domain(mapping: dict) -> set:
+    return set(mapping.keys())
 
-h = {10: 'x', 20: 'y', 30: 'x', 40: 'z'}
+def get_range(mapping: dict) -> set:
+    return set(mapping.values())
 
-domain = set(h.keys())
-range = set(h.values())
+def is_well_defined(mapping: dict, target: set) -> bool:
+    for v in mapping.values():
+        if v not in target:
+            return False
+    return True
 
-course = [
-    {'CRN': 'CSV17', 'CourseTitle': 'Discrete Structures', 'CourseCredit': 3, 'CourseGrade': 'A'},
-    {'CRN': 'CSV09', 'CourseTitle': 'Intro to Computer Science', 'CourseCredit': 3, 'CourseGrade': 'B'},
-    {'CRN': 'CSV42', 'CourseTitle': 'Data Structures', 'CourseCredit': 3, 'CourseGrade': 'A'},
-    {'CRN': 'CSV11', 'CourseTitle': 'Intro to Programming', 'CourseCredit': 3, 'CourseGrade': 'B'}
-]
+def is_injective(mapping: dict) -> bool:
+    vals = list(mapping.values())
+    return len(vals) == len(set(vals))
 
-for c in course:
-    if c['CourseGrade'] == 'A':
-        c['CourseCredit'] = 4
+def is_surjective(mapping: dict, target: set) -> bool:
+    return set(mapping.values()) == target
 
-total = 0
-for c in course:
-    if 'Python' in c['CourseTitle']:
-        total += c['CourseCredit']
-
-keys = ['CRN', 'CourseTitle', 'CourseCredit', 'CourseGrade']
-
-values = [
-    ['CSV17', 'Discrete Structures', 3, 'A'],
-    ['CSV09', 'Intro to Computer Science', 3, 'B'],
-    ['CSV42', 'Data Structures', 3, 'A'],
-    ['CSV11', 'Intro to Programming', 3, 'B']
-]
-
-course_zip = [dict(zip(keys, v)) for v in values]
+def is_bijective(mapping: dict, target: set) -> bool:
+    return is_injective(mapping) and is_surjective(mapping, target)
