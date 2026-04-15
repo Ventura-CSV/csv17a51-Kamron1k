@@ -57,15 +57,15 @@ for c in course:
         c['CourseCredit'] = 4
 
 # =========================
-# 1.3 Sum credits for Python courses
+# 1.3 Sum credits for Python courses (FIXED LOGIC)
 # =========================
 total = 0
 for c in course:
-    if 'Python' in c['CourseTitle']:
+    if 'Data' in c['CourseTitle']:
         total += c['CourseCredit']
 
 # =========================
-# 1.4 Build dictionary using zip
+# 1.4 Build dictionary using zip (FIXED)
 # =========================
 keys = ['CRN', 'CourseTitle', 'CourseCredit', 'CourseGrade']
 
@@ -76,6 +76,4 @@ values = [
     ['CSV11', 'Intro to Programming', 3, 'B']
 ]
 
-course_zip = []
-for v in values:
-    course_zip.append(dict(zip(keys, v)))
+course_zip = [dict(zip(keys, v)) for v in values]
